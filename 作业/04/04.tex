@@ -1,0 +1,133 @@
+\documentclass{ctexart}
+
+\bibliographystyle{plain}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{url}
+
+\title{Manderbrot Set 的生成和探索}
+
+
+\author{王铭恩\\信计3210103777}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+
+
+
+\end{abstract}
+Mandelbrot集合是指复平面上使函数$f_c(z)=z^2+c$不发散的所有点c的集合\cite{Mandelbrot_set}。而它所画出的图像是十分美丽的。只要你计算的点足够多，不管你把图案放大多少倍，都能显示出更加复杂的局部，这些局部既与整体不同，又有某种相似的地方。图案具有无穷无尽的细节和自相似性。而它也因为这样神奇的特性而获奖。在此文中我将探索Mandelbrot集合以及根据它所画出的图像。
+
+\section{问题的背景介绍}
+曼德勃罗(Benoit B. Mandelbrot)，数学家、经济学家，分形理论的创始人。1924年生于波兰华沙；1936年随全家移居法国巴黎，在那里经历了动荡的二战时期；1948年在帕萨迪纳获得航空硕士学位；1952年在巴黎大学获得数学博士学位；曾经是普林斯顿、日内瓦、巴黎的访问教授，哈佛大学的“数学实践讲座”的教授，IBM公司的研究成员和会员\cite{Mandelbrot}。Mandelbrot集合图形是他于1975年夏天一个夜晚，在冥思苦想之余翻看儿子的拉丁文字典时想到的，起拉丁文的原意是“产生无规则的碎片”。曼德勃罗教授称此为"魔鬼的聚合物"。为此，曼德勃罗在1988年获得了"科学行为艺术大奖"\cite{birth_Mandelbrot_set}。如图：
+\begin{figure}[htbp]
+\centering
+\subfigure[1]
+{
+    \begin{minipage}[b]{.4\linewidth}
+        \centering
+        \includegraphics[scale=0.07]{2}
+    \end{minipage}
+}
+\subfigure[2]
+{
+ 	\begin{minipage}[b]{.4\linewidth}
+        \centering
+        \includegraphics[scale=0.11]{1}
+    \end{minipage}
+}
+\caption{艺术图}
+\end{figure}
+\section{数学理论}
+Mandelbrot集合M是关于复数c的一个集合。其中c满足以下条件：\\
+由公式
+\begin{equation}
+z_{n+1}=z_{n}+c
+\end{equation}
+若从$z=0+0i$开始，$z_n$是收敛的，那么c就属于M。所有满足条件的c构成Mandelbrot集合M。当c属于Mandelbrot集合M，其所对应的在复平面上的点就涂成黑色，其他点则上白色，此时形成的复平面为坐标平面的图形就是大家所熟知的经典图形了。
+
+\section{算法}
+算法\cite{Mandelbrot_set}如下
+\begin{verbatim}
+Choose a maximal iteration number N
+For each pixel p of the image:
+  Let c be the complex number represented by p
+  Let z be a complex variable
+  Set z to 0
+  Do the following N times:    
+    If |z|>2 then color the pixel white, end this loop prematurely, go to the next pixel
+    Otherwise replace z by z*z+c
+  If the loop above reached its natural end: color the pixel p in black
+  Go to the next pixel
+\end{verbatim}
+
+
+\section{数值算例}
+
+
+当我们取N为100或20时（即进行100或20次迭代）\cite{mathsoft04}有如图：\\
+
+\begin{figure}[htbp]
+\centering
+\subfigure[N为100]
+{
+    \begin{minipage}[b]{.3\linewidth}
+        \centering
+        \includegraphics[scale=0.05]{100}
+    \end{minipage}
+}
+\subfigure[N为20,标准]
+{
+ 	\begin{minipage}[b]{.3\linewidth}
+        \centering
+        \includegraphics[scale=0.05]{20origin}
+    \end{minipage}
+}
+\subfigure[N为20,上方]
+{
+ 	\begin{minipage}[b]{.3\linewidth}
+        \centering
+        \includegraphics[scale=0.05]{20.above}
+    \end{minipage}
+}
+\caption{photogroup1}
+\end{figure}
+
+而当图拉得比较长以及更高次迭代时，如图：
+\begin{figure}[htbp]
+\centering
+\subfigure[N为100，较长]
+{
+    \begin{minipage}[b]{.4\linewidth}
+        \centering
+        \includegraphics[scale=0.07]{100long}
+    \end{minipage}
+}
+\subfigure[N为1000]
+{
+ 	\begin{minipage}[b]{.4\linewidth}
+        \centering
+        \includegraphics[scale=0.07]{1000}
+    \end{minipage}
+}
+\caption{photogroup2}
+\end{figure}
+
+
+
+
+\section{结论}
+
+在此次的探索中，通过对于andelbrot集合所代表的关系以及它所形成的图像在计算机下的代码编辑以及图像绘制，我成功重走曼德勃罗的探索过程，并成功重现其图形，从而证实了他结论的正确性。在欣赏其美丽的同时，我也进一步探寻了数学的神奇与魅力。
+
+
+\bibliography{article}
+
+\end{document}

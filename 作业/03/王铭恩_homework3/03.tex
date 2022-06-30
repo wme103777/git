@@ -1,0 +1,50 @@
+\documentclass{ctexart}
+
+\bibliographystyle{plain}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{url}
+
+\title{作业三: 关于我的操作环境}
+
+
+\author{王铭恩\\信计3210103777}
+
+
+\begin{document}
+
+\maketitle
+
+在这门数学软件课程中，我开始使用linux系统，并且在可以预计的将来，我将会大范围使用这个工作环境进行学习。因此，我将在这里说明有关自己的linux环境的一些信息。\cite{mathsoft}
+\section{Linux 发行版名称以及版本号}
+发行版本：Ubuntu\cite{linux};
+    版本号：22.04
+\section{调整，安装与额外配置}
+首先进行换源操作，将海外源换成清华源，以此来提高下载速度;\\
+    其次下载synaptic从而可以进行后续的安装软件操作;
+    然后进行输入法调整，使用fcitx（通过synaptic下载）输入方式，同时下载google输入法,然后在重新登入后增加中文输入法;
+    而为了数学工作，数学软件需要很多：\\
+\verb|g++|;\verb|gcc|;\verb|make|;\verb|cmake|;\verb|automake|;\\
+\verb|emacs|;\verb|vim|;\verb|gedit|;\\
+\verb|texlive|;\verb|doxygen|;\verb|doxymacs|;\\
+\verb|libboost|;\verb|trilinos|;\verb|dx|;\verb|git|;\verb|ssh|;\verb|vnc|;\verb|x11vnc|
+
+\section{工作规划}
+\subsection{使用场合}
+完成作业文档的撰写与提交；\\
+    数学课程结业论文的书写以及提交;\\
+    接收课程文件与信息;\\
+    进行数学图像的绘制，从而研究其规律以及完成绘图作业;\\
+    进行数学科学计算;\\
+\subsection{工作环境适应性}
+就目前工作环境而言，在可预测的未来，大概率无法满足各种需求：一方面在配置方面会有越来越高的要求，应而需要在用到的时候要通过\verb|get-apt install|或者软件包下载;另一方面，在个人操作方面，在未来使用中难免会遇到新的还未掌握的操作，这时候需要通过阅读工具书或在一些计算机社区中学习与求助，从而学习掌握新的操作。
+
+
+\section{稳定与安全}
+作为虚拟机用户，我会经常备份虚拟机文件，以防意外发生使得虚拟机崩溃导致的悲剧。同时，重要的学习资料与文献资料，我会在云盘中备份（可以有复数个途径），防止由于意外事件导致的文件丢失。在需要多目录i下放置文件时，我不会使用简单的复制粘贴，而是使用链接，防止因为分不清文件而产生失误。
+
+\bibliography{article}
+
+\end{document}
+
